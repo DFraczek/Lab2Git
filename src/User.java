@@ -14,16 +14,16 @@ public class User {
         return username;
     }
 
+    public String getPassword() {
+        return passwd;
+    }
+
     public void setUsername(String username) {
         if (username != null && username.length() >= 3) {
             this.username = username;
         } else {
             throw new IllegalArgumentException("Username must be at least 3 characters long.");
         }
-    }
-
-    public String getPassword() {
-        return passwd;
     }
 
     public void setPassword(String passwd) {
@@ -42,6 +42,16 @@ public class User {
             System.out.println("Error: " + e.getMessage());
             return null;
         }
+    }
+
+    public User changePassword(String newPassword) {
+        this.passwd = newPassword;
+        return this;
+    }
+    public User updateUser(User userToBeUpdated, User user){
+        userToBeUpdated.username = user.username;
+        userToBeUpdated.passwd = user.passwd;
+        return userToBeUpdated;
     }
 
 }
