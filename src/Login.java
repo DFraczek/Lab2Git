@@ -12,7 +12,7 @@ public class Login {
         String password = scanner.nextLine();
 
         boolean loginSuccessful = false;
-        for (User user : userList) {
+        for (User user : User.userList) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 loginSuccessful = true;
                 break;
