@@ -5,5 +5,7 @@ public class Main {
         User.register("johnDoe", "password123");
         User.register("ann", "mypassword");
         Login.loginUser();
+
+        UserManager.showAllUsers();
     }
 }
